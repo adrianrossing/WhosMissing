@@ -1,23 +1,90 @@
-<nav class="navbar navbar-static-top navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand">
-        <span class="glyphicon glyphicon-home"></span> Who's Missing
-      </a>
-    </div>
+<!--<nav class="navbar">-->
+  <!--<div class="container-fluid">-->
+    <!--<div class="navbar-header">-->
+      <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#whosNav">-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+      <!--</button>-->
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-      <ul class="nav navbar-nav">
-        <li class="active"><a ng-href="#">Home</a></li>
-        <li><a ng-href="#">About</a></li>
-        <li><a ng-href="#">Contact</a></li>
-      </ul>
+      <!--<a class="navbar-brand">-->
+        <!--<span class="glyphicon glyphicon-home"></span> Who's Missing-->
+      <!--</a>-->
+    <!--</div>-->
 
-      <ul class="nav navbar-nav navbar-right acme-navbar-text">
-        <ul class="nav navbar-nav">
-        <li><a href ui-sref="landing">Logout</a></li>
-          </ul>
-      </ul>
-    </div>
+    <!--<div class="collapse navbar-collapse" id="whosNav">-->
+      <!--<ul class="nav navbar-nav">-->
+        <!--<li class="active"><a ng-href="#">Home</a></li>-->
+        <!--<li><a ng-href="#">About</a></li>-->
+        <!--<li><a ng-href="#">Contact</a></li>-->
+      <!--</ul>-->
+
+      <!--<ul class="nav navbar-nav navbar-right">-->
+        <!--<li><a href="#/landing"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>-->
+        <!--<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
+      <!--</ul>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</nav>-->
+
+
+<!--<nav class="navbar navbar-inverse">-->
+  <!--<div class="container-fluid">-->
+    <!--<div class="navbar-header">-->
+      <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" ng-click="vm.hi()">-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+      <!--</button>-->
+      <!--<a class="navbar-brand" href="#">Who's Missing?</a>-->
+    <!--</div>-->
+    <!--<div class="collapse navbar-collapse" id="myNavbar">-->
+      <!--<ul class="nav navbar-nav">-->
+        <!--<li class="active"><a href="#">Check-In</a></li>-->
+        <!--<li class="dropdown">-->
+          <!--&lt;!&ndash;<a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>&ndash;&gt;-->
+          <!--&lt;!&ndash;<ul class="dropdown-menu">&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a href="#">Page 1-1</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a href="#">Page 1-2</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a href="#">Page 1-3</a></li>&ndash;&gt;-->
+          <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+        <!--<li><a href="#">About</a></li>-->
+        <!--<li><a href="#">Admin</a></li>-->
+      <!--</ul>-->
+      <!--<ul class="nav navbar-nav navbar-right">-->
+        <!--<li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>-->
+        <!--<li><a ui-sref="landing"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>-->
+      <!--</ul>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</nav>-->
+
+
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Who's Missing?</a>
   </div>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" collapse="navCollapsed">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Check-In</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Admin</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+      <li><a ui-sref="landing"><span></span>Login</a></li>
+    </ul>
+  </div>
+  <!-- /.navbar-collapse -->
+
+  <i class="fa fa-sign-in"></i>
 </nav>

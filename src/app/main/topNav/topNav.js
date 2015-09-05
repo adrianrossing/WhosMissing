@@ -22,5 +22,10 @@
   //TopNavController.$inject = ['common', '$rootScope', '$location'];
 
   function TopNavController() {//common, $rootScope, $location) {
+    var vm = this;
+    vm.hi = function(){
+      console.log('poop');
+    }
+
   }
 })();

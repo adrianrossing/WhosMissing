@@ -29,21 +29,31 @@
 
   function LoginController() {
     var vm = this;
-    //
-    //vm.user = {
-    //  password = "",
-    //  name = ""
-    //  };
-    //
-    //vm.tryLogin = function(){
-    //  console.log(this);
-    //}
-    //
-    //
-    //activate();
-    //
-    //function activate() {
-    //}
+
+    vm.user = {
+      password: "",
+      name: ""
+      };
+
+    vm.tryLogin = function(){
+
+      Parse.User.logIn(vm.user.name, vm.user.password, {
+        success: function(user) {
+          console.log(user);
+        },
+        error: function(user, error) {
+          console.log(user, error);
+        }
+      });
+
+
+    }
+
+
+    activate();
+
+    function activate() {
+    }
 
   }
 })();

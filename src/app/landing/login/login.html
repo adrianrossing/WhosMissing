@@ -1,0 +1,12 @@
+<div class="container">
+
+  <form class="form-signin">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <input type="text" id="inputUserName" class="form-control" placeholder="User Name" ng-model="vm.user.userName" required autofocus>
+    <br>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" ng-model="vm.user.password" required>
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="vm.tryLogin()">Sign In</button>
+  </form>
+
+</div>

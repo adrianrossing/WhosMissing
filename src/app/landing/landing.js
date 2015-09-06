@@ -7,7 +7,7 @@
   var controllerId = 'LandingController';
 
   angular
-    .module('landing-controller-module', ['landing-login-controller-module'])
+    .module('landing-controller-module', ['landing-login-controller-module', 'landing-register-controller-module', 'landing-reset-controller-module'])
     .controller(controllerId, LandingController)
     .directive('landing', function () {
       return {
@@ -25,6 +25,8 @@
   //LandingController.$inject = [];
 
   function LandingController() {
-
+    var vm = this;
+    vm.type = 1;
   }
+
 })();

@@ -1,4 +1,19 @@
-<div>
-  <landing-login>  </landing-login>
+ <div class="container">
 
-</div>
+   <h2>Who's Missing</h2>
+
+   <tabset>
+     <tab heading="Log In" ng-click="vm.type = 1;"></tab>
+     <tab heading="Register" ng-click="vm.type = 2;"></tab>
+     <tab heading="Reset Password" ng-click="vm.type = 3;"></tab>
+   </tabset>
+
+   <div ng-switch="vm.type">
+     <landing-login ng-switch-when="1">  </landing-login>
+     <landing-register ng-switch-when="2"> </landing-register>
+     <landing-reset ng-switch-when="3"> </landing-reset>
+   </div>
+
+
+   <!--<button ui-sref="home">Take me home</button>-->
+ </div>

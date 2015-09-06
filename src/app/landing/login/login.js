@@ -1,10 +1,3 @@
-/**
- * Created by ROSSADR on 9/4/2015.
- */
-
-/**
- * Created by ROSSADR on 9/4/2015.
- */
 (function () {
   'use strict';
 
@@ -32,27 +25,23 @@
 
     vm.user = {
       password: "",
-      name: ""
+      userName: ""
       };
+    console.log(this);
 
     vm.tryLogin = function(){
 
-      Parse.User.logIn(vm.user.name, vm.user.password, {
-        success: function(user) {
-          console.log(user);
+      tempLogin(vm.user.userName, vm.user.password);
+
+    };
+
+    tempLogin = function(userName, password ) {
+      Parse.User.logIn(userName, password, {
+        success: function (user) {
         },
-        error: function(user, error) {
-          console.log(user, error);
+        error: function (user, error) {
         }
       });
-
-
-    }
-
-
-    activate();
-
-    function activate() {
     }
 
   }

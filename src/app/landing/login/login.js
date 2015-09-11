@@ -4,7 +4,7 @@
   var controllerId = 'LoginController';
 
   angular
-    .module('landing-login-controller-module', [])
+    .module('landing-login-controller-module', ['landing-service-module'])
     .controller(controllerId, LoginController)
     .directive('landingLogin', function () {
       return {
@@ -18,31 +18,20 @@
       };
     });
 
-  //LoginController.$inject = [];
+  LoginController.$inject = ['LandingService'];
 
-  function LoginController() {
+  function LoginController(landingService) {
     var vm = this;
 
     vm.user = {
       password: "",
       userName: ""
       };
-    console.log(this);
 
-    vm.tryLogin = function(){
-
-      tempLogin(vm.user.userName, vm.user.password);
-
+    vm.tryLogin = function() {
+      landingService.landingLogin(vm.user.userName, vm.user.password);
+      console.log('hi');
     };
-
-    tempLogin = function(userName, password ) {
-      Parse.User.logIn(userName, password, {
-        success: function (user) {
-        },
-        error: function (user, error) {
-        }
-      });
-    }
 
   }
 })();

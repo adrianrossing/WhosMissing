@@ -15,6 +15,15 @@
     toastr.options.positionClass = 'toast-top-right';
     toastr.options.preventDuplicates = true;
     toastr.options.progressBar = true;
+
+    invokeParse();
   }
+
+  function invokeParse(){
+    Parse.initialize("Hr1qOfIviFMpED9Zdyoma7FXhhyFJAyU9bV2sInX","Pod2feVya2MbEiFeBnMeTZf0wJOPMjAJf54DQyDj");
+  }
+
+
+
 
 })();

@@ -24,7 +24,6 @@
   function TopNavController() {//common, $rootScope, $location) {
     var vm = this;
     vm.hi = function(){
-      console.log('poop');
     };
 
   }

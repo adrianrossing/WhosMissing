@@ -28,10 +28,32 @@
       userName: ""
       };
 
+    vm.successfullyLoggedIn = false;
+
     vm.tryLogin = function() {
-      landingService.landingLogin(vm.user.userName, vm.user.password);
-      console.log('hi');
+      if (Parse.User.current)
+      {
+        //landingService.landingLogin(vm.user.userName, vm.user.password);
+
+        Parse.User.logIn(vm.user.userName, vm.user.password, {
+          success: function (user) {
+            console.log('good');
+            vm.successfullyLoggedIn = true;
+            console.log(vm);
+            //return user;
+          },
+          error: function (error) {
+            console.log('bad');
+            //landingFactory.handleParseError(error);
+          }
+        });
+      }
+
     };
+
+    vm.navigateToHome = function(){
+
+    }
 
   }
 })();

@@ -25,7 +25,8 @@
           return user;
         },
         error: function (user, error) {
-          console.log(error);
+          console.log('error');
+          landingFactory.handleParseError(error);
         }
       });
     }

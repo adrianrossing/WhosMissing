@@ -21,12 +21,13 @@
     this.landingLogin = function (userName, password) {
       Parse.User.logIn(userName, password, {
         success: function (user) {
-          console.log(user);
-          return user;
+          vm.successfullyLoggedIn = true;
+          $state.go('home');
+
         },
-        error: function (user, error) {
-          console.log('error');
-          landingFactory.handleParseError(error);
+        error: function (error) {
+          return false;
+          //landingFactory.handleParseError(error);
         }
       });
     }

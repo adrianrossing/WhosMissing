@@ -14,17 +14,20 @@
         templateUrl: 'app/main/topNav/topNav.html',
         bindToController: true,
         scope: {
-          //Placeholder for any dependencies needed by this directive.
+          userAttributes:"="
         }
       };
     });
 
-  //TopNavController.$inject = ['common', '$rootScope', '$location'];
+  TopNavController.$inject = ['$state'];
 
-  function TopNavController() {//common, $rootScope, $location) {
+  function TopNavController($state) {//common, $rootScope, $location) {
     var vm = this;
-    vm.hi = function(){
-    };
+console.log(vm);
+    vm.logout = function() {
+      Parse.User.logOut();
+      $state.go('landing');
+    }
 
   }
 })();

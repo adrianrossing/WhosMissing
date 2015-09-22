@@ -18,9 +18,9 @@
       };
     });
 
-  LoginController.$inject = ['LandingService'];
+  LoginController.$inject = ['LandingService', '$state'];
 
-  function LoginController(landingService) {
+  function LoginController(landingService, $state) {
     var vm = this;
 
     vm.user = {
@@ -28,32 +28,38 @@
       userName: ""
       };
 
-    vm.successfullyLoggedIn = false;
+    activate();
+
+    vm.failedToLogin = false;
+
+    function activate() {
+      if (Parse.User.current()) {
+      console.log('ji');
+        console.log(Parse.User.current());
+        $state.go('home');
+      }
+    }
+
 
     vm.tryLogin = function() {
-      if (Parse.User.current)
-      {
-        //landingService.landingLogin(vm.user.userName, vm.user.password);
-
-        Parse.User.logIn(vm.user.userName, vm.user.password, {
-          success: function (user) {
-            console.log('good');
-            vm.successfullyLoggedIn = true;
-            console.log(vm);
-            //return user;
-          },
-          error: function (error) {
-            console.log('bad');
-            //landingFactory.handleParseError(error);
-          }
-        });
+      if (Parse.User.current()) {
+        Parse.User.logOut();
       }
 
+      Parse.User.logIn(vm.user.userName, vm.user.password, {
+        success: function (user) {
+          $state.go('home');
+        },
+        error: function (error) {
+          vm.handleFailure();
+          //landingFactory.handleParseError(error);
+        }
+      });
     };
 
-    vm.navigateToHome = function(){
-
-    }
+    vm.handleFailure = function() {
+      vm.failedToLogin = true; //TODO: doesn't work :(
+    };
 
   }
 })();

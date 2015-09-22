@@ -23,10 +23,35 @@
 
   function TopNavController($state) {//common, $rootScope, $location) {
     var vm = this;
-console.log(vm);
+    vm.state;
+
     vm.logout = function() {
       Parse.User.logOut();
       $state.go('landing');
+    };
+
+    vm.navigateTo = function(location) {
+      switch (location) {
+        case "checkIn":
+          vm.state = "checkIn";
+          //$state.go('home');
+          break;
+        case "schedule":
+          vm.state = "checkIn";
+          $state.go('home.schedule');
+          break;
+        case "tourTalk":
+          vm.state = "tourTalk";
+          $state.go('home.tourTalk');
+          break;
+        case "admin" :
+          vm.state = "admin";
+          $state.go('home.admin');
+          break;
+
+
+
+      }
     }
 
   }

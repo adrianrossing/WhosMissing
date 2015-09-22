@@ -20,7 +20,7 @@
 
   LoginController.$inject = ['LandingService', '$state'];
 
-  function LoginController(landingService, $state) {
+  function LoginController(LandingService, $state) {
     var vm = this;
 
     vm.user = {
@@ -34,8 +34,6 @@
 
     function activate() {
       if (Parse.User.current()) {
-      console.log('ji');
-        console.log(Parse.User.current());
         $state.go('home');
       }
     }

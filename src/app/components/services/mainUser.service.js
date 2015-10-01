@@ -27,7 +27,6 @@
       vm.currentUser.isSignedIn = false;
       vm.currentUser.groupName = "St. Olaf Orchestra";
       vm.currentUser.eventName = "West Coast Tour";
-      vm.currentUser.preferences = {};
       //do parse query here to get user information
     }
 

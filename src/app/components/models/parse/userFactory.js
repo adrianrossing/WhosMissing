@@ -15,7 +15,7 @@
       getCurrentUserProperties : function(userID) {
         var defer = $q.defer();
         var query = new Parse.Query(this);
-        query.equalTo("id", userID);
+        query.equalTo("objectId", userID);
         query.find({
           success : function(result) {
             defer.resolve(result);

@@ -4,7 +4,7 @@
   var controllerId = 'UserSignInController';
 
   angular
-    .module('user-sign-in-controller-module', [])
+    .module('user-sign-in-controller-module', ['test-factory-module'])
     .controller(controllerId, UserSignInController)
     .directive('userSignIn', function () {
       return {
@@ -20,9 +20,17 @@
       };
     });
 
-  UserSignInController.$inject = ['$state'];
+  UserSignInController.$inject = ['$state', 'TextFactory'];
 
-  function UserSignInController($state) {
+  function UserSignInController($state, TextFactory) {
     var vm = this;
+    TextFactory.getCalendarEvents("Viking Theater").then(
+      function(results) {
+        vm.events = results;
+      }, function (error) {
+        //dumb
+    });
+
+    console.log(vm);
   }
 })();

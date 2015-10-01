@@ -74,14 +74,16 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" collapse="navCollapsed">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Check-In</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Admin</a></li>
+      <li ng-click="navigateTo('checkIn')" ng-class="{active : vm.state === 'checkIn'}"><a>Check-In</a></li>
+      <li ng-click="navigateTo('schedule')" ng-class="{active : vm.state === 'schedule'}"><a>Schedule</a></li>
+      <li ng-click="navigateTo('tourTalk')" ng-class="{active : vm.state === 'tourTalk'}"><a>TourTalk!</a></li>
+      <li><a>About</a></li>
+      <li ng-click="navigateTo('admin')" ng-class="{active : vm.state === 'admin'}" ng-if="vm.userAttributes.isAdminEligible"><a>Admin</a></li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-      <li><a ui-sref="landing"><span></span>Login</a></li>
+      <li><a>Welcome, {{vm.userAttributes.firstName}}!</a></li>
+      <li ng-click="vm.logout()" class="hover-hand"><a><span class="glyphicon glyphicon-user"></span> Logout</a></li>
     </ul>
   </div>
   <!-- /.navbar-collapse -->

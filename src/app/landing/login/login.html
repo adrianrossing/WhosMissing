@@ -2,6 +2,10 @@
 
   <form class="form-signin">
     <h2 class="form-signin-heading">Please sign in</h2>
+    <div ng-if="vm.failedToLogin" style="color:red">
+      <i>Username and password combination not found</i>
+      <br>
+    </div>
     <input type="text" id="inputUserName" class="form-control" placeholder="User Name" ng-model="vm.user.userName" required autofocus>
     <br>
     <input type="password" id="inputPassword" class="form-control" placeholder="Password" ng-model="vm.user.password" required>

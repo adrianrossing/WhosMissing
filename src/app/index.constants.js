@@ -5,5 +5,4 @@
   angular
     .module('whosMissing')
     .constant('toastr', toastr);
-
 })();
